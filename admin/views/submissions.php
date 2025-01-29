@@ -32,6 +32,7 @@ $submissions = Contact_Form_Submissions::get_submissions();
                 <th><?php _e('Description', 'jec-contact-form'); ?></th>
                 <th><?php _e('Copy', 'jec-contact-form'); ?></th>
                 <th><?php _e('Created At', 'jec-contact-form'); ?></th>
+                <th><?php _e('Form URL', 'jec-contact-form'); ?></th>
                 <th><?php _e('Actions', 'jec-contact-form'); ?></th>
                 <th><?php _e('Download Info', 'jec-contact-form'); ?></th>
             </tr>
@@ -50,19 +51,28 @@ $submissions = Contact_Form_Submissions::get_submissions();
                         <td><?php echo esc_html( $submission->description_text ); ?></td>
                         <td><?php echo esc_html( $submission->receive_copy ? __('Yes', 'jec-contact-form') : __('No', 'jec-contact-form') ); ?></td>
                         <td><?php echo esc_html( $submission->created_at ); ?></td>
+                        <td><?php echo esc_html( $submission->form_url ); ?></td>
                         <td>
-                            <button class="btn btn-danger delete-contact" data-id="<?php echo esc_attr( $submission->id ); ?>"><?php _e('Delete', 'jec-contact-form'); ?></button>
-                            <button class="btn btn-info copy-contact" data-email="<?php echo esc_attr( $submission->email_address ); ?>" data-name="<?php echo esc_attr( $submission->first_name . ' ' . $submission->last_name ); ?>"><?php _e('Copy', 'jec-contact-form'); ?></button>
-                            <button class="btn btn-warning follow-up" data-email="<?php echo esc_attr( $submission->email_address ); ?>" data-name="<?php echo esc_attr( $submission->first_name . ' ' . $submission->last_name ); ?>"><?php _e('Follow Up', 'jec-contact-form'); ?></button>
+                            <button class="btn btn-danger delete-contact" data-id="<?php echo esc_attr( $submission->id ); ?>" title="<?php _e('Delete', 'jec-contact-form'); ?>">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <button class="btn btn-info copy-contact" data-email="<?php echo esc_attr( $submission->email_address ); ?>" data-name="<?php echo esc_attr( $submission->first_name . ' ' . $submission->last_name ); ?>" title="<?php _e('Copy', 'jec-contact-form'); ?>">
+                                <i class="bi bi-clipboard"></i>
+                            </button>
+                            <button class="btn btn-warning follow-up" data-email="<?php echo esc_attr( $submission->email_address ); ?>" data-name="<?php echo esc_attr( $submission->first_name . ' ' . $submission->last_name ); ?>" title="<?php _e('Follow Up', 'jec-contact-form'); ?>">
+                                <i class="bi bi-envelope"></i>
+                            </button>
                         </td>
                         <td>
-                            <button class="btn btn-success download-info" data-submission='<?php echo json_encode($submission); ?>'><?php _e('Download', 'jec-contact-form'); ?></button>
+                            <button class="btn btn-success download-info" data-submission='<?php echo json_encode($submission); ?>' title="<?php _e('Download', 'jec-contact-form'); ?>">
+                                <i class="bi bi-download"></i>
+                            </button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             <?php else : ?>
                 <tr>
-                    <td colspan="12"><?php _e('No submissions found.', 'jec-contact-form'); ?></td>
+                    <td colspan="13"><?php _e('No submissions found.', 'jec-contact-form'); ?></td>
                 </tr>
             <?php endif; ?>
         </tbody>
@@ -99,6 +109,7 @@ $submissions = Contact_Form_Submissions::get_submissions();
 <?php
 wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), null, true);
 wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
+wp_enqueue_style('bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css');
 wp_enqueue_script('jec-contact-form-submissions', plugin_dir_url(__FILE__) . '../js/submissions.js', array('jquery', 'bootstrap-js'), null, true);
 wp_enqueue_style('jec-contact-form-submissions', plugin_dir_url(__FILE__) . '../css/submissions.css');
 

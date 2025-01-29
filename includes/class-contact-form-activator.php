@@ -1,10 +1,16 @@
 <?php
 /**
- * Class Contact_Form_Activator
+ * Fired during plugin activation
  *
- * This class handles the activation of the plugin, including the creation of the database table.
+ * @link       https://www.juane.cl
+ * @since      1.0.0
+ *
+ * @package    Jec_Contact_Form
+ * @subpackage Jec_Contact_Form/includes
  */
+
 class Contact_Form_Activator {
+
     /**
      * Activate the plugin.
      *
@@ -32,6 +38,7 @@ class Contact_Form_Activator {
             nonce_value varchar(100) NOT NULL,
             user_ip varchar(45) NOT NULL,
             browser_info text NOT NULL,
+            form_url text NOT NULL,
             created_at datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
             PRIMARY KEY  (id)
         ) $charset_collate;";
