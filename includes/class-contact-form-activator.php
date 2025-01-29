@@ -22,7 +22,7 @@ class Contact_Form_Activator {
         $charset_collate = $wpdb->get_charset_collate();
 
         // Drop the table if it exists
-        $wpdb->query("DROP TABLE IF EXISTS $table_name");
+        //$wpdb->query("DROP TABLE IF EXISTS $table_name");
 
         // Create the table
         $sql = "CREATE TABLE $table_name (
