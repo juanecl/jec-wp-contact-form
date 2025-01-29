@@ -6,24 +6,32 @@ use SendinBlue\Client\Model\SendSmtpEmail;
 use SendGrid\Mail\Mail;
 
 class EmailFactory {
-    public static function send_email($provider, $from_email, $from_name, $to_email, $subject, $content) {
+    public static function send_email($provider, $from_email, $from_name, $to_emails, $subject, $content) {
+        // Asegurarse de que $to_emails sea un array
+        if (!is_array($to_emails)) {
+            $to_emails = [$to_emails];
+        }
+
         switch ($provider) {
             case 'sendgrid':
-                return self::send_with_sendgrid($from_email, $from_name, $to_email, $subject, $content);
+                return self::send_with_sendgrid($from_email, $from_name, $to_emails, $subject, $content);
             case 'brevo':
-                return self::send_with_brevo($from_email, $from_name, $to_email, $subject, $content);
+                return self::send_with_brevo($from_email, $from_name, $to_emails, $subject, $content);
             default:
                 throw new Exception('Invalid email provider specified.');
         }
     }
 
-    private static function send_with_sendgrid($from_email, $from_name, $to_email, $subject, $content) {
+    private static function send_with_sendgrid($from_email, $from_name, $to_emails, $subject, $content) {
         $sendgrid_api_key = get_option('sendgrid_api_key');
         $email = new Mail();
-        $email->setFrom($from_email, $from_name);
+        $email->setFrom(get_option('from_email'), get_option('from_name'));
         $email->setSubject($subject);
-        $email->addTo($to_email);
+        foreach ($to_emails as $to_email) {
+            $email->addTo($to_email);
+        }
         $email->addContent('text/plain', $content);
+        $email->setReplyTo(get_option('reply_to_email'), get_option('reply_to_name'));
 
         $sendgrid = new \SendGrid($sendgrid_api_key);
         try {
@@ -35,16 +43,18 @@ class EmailFactory {
         }
     }
 
-    private static function send_with_brevo($from_email, $from_name, $to_email, $subject, $content) {
+    private static function send_with_brevo($from_email, $from_name, $to_emails, $subject, $content) {
         $brevo_api_key = get_option('brevo_api_key');
         $config = Configuration::getDefaultConfiguration()->setApiKey('api-key', $brevo_api_key);
         $apiInstance = new TransactionalEmailsApi(new GuzzleHttp\Client(), $config);
 
         $email = new SendSmtpEmail([
             'subject' => $subject,
-            'sender' => ['email' => $from_email, 'name' => $from_name],
-            'replyTo' => ['email' => 'hola@juane.cl', 'name' => $from_name],
-            'to' => [['email' => $to_email]],
+            'sender' => ['email' => get_option('from_email'), 'name' => get_option('from_name')],
+            'replyTo' => ['email' => get_option('reply_to_email'), 'name' => get_option('reply_to_name')],
+            'to' => array_map(function($to_email) {
+                return ['email' => $to_email];
+            }, $to_emails),
             'htmlContent' => nl2br($content),
         ]);
 

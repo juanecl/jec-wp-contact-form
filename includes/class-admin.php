@@ -83,6 +83,10 @@ class ContactFormAdmin {
         register_setting('email_relay_settings', 'email_provider');
         register_setting('email_relay_settings', 'sendgrid_api_key');
         register_setting('email_relay_settings', 'brevo_api_key');
+        register_setting('email_relay_settings', 'from_email');
+        register_setting('email_relay_settings', 'from_name');
+        register_setting('email_relay_settings', 'reply_to_email');
+        register_setting('email_relay_settings', 'reply_to_name');
     }
 
     /**

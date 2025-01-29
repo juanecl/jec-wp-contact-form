@@ -20,6 +20,22 @@
             <label for="brevo_api_key"><?php _e('Brevo API Key', 'jec-contact-form'); ?></label>
             <input type="text" id="brevo_api_key" name="brevo_api_key" class="form-control" value="<?php echo esc_attr(get_option('brevo_api_key')); ?>" />
         </div>
+        <div class="form-group">
+            <label for="from_email"><?php _e('From Email', 'jec-contact-form'); ?></label>
+            <input type="email" id="from_email" name="from_email" class="form-control" value="<?php echo esc_attr(get_option('from_email')); ?>" />
+        </div>
+        <div class="form-group">
+            <label for="from_name"><?php _e('From Name', 'jec-contact-form'); ?></label>
+            <input type="text" id="from_name" name="from_name" class="form-control" value="<?php echo esc_attr(get_option('from_name')); ?>" />
+        </div>
+        <div class="form-group">
+            <label for="reply_to_email"><?php _e('Reply-To Email', 'jec-contact-form'); ?></label>
+            <input type="email" id="reply_to_email" name="reply_to_email" class="form-control" value="<?php echo esc_attr(get_option('reply_to_email')); ?>" />
+        </div>
+        <div class="form-group">
+            <label for="reply_to_name"><?php _e('Reply-To Name', 'jec-contact-form'); ?></label>
+            <input type="text" id="reply_to_name" name="reply_to_name" class="form-control" value="<?php echo esc_attr(get_option('reply_to_name')); ?>" />
+        </div>
         <?php submit_button(); ?>
     </form>
 </div>
