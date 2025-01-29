@@ -37,7 +37,13 @@ class Contact_Form_Renderer {
         ob_start();
 
         // Include the contact form template
-        include plugin_dir_path(__FILE__) . 'templates/contact-form.php';
+        ?>
+        <div class="bg-dark-muted py-1">
+        <?php
+            include plugin_dir_path(__FILE__) . 'templates/contact-form.php';
+        ?>
+        </div>
+        <?php
 
         // Return the buffered content
         return ob_get_clean();

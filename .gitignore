@@ -8,7 +8,7 @@ Thumbs.db
 .env.*.local
 
 # Archivos de dependencias
-/vendor/
+vendor/
 node_modules/
 
 # Archivos de compilación
