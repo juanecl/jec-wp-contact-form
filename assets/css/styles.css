@@ -1,0 +1,61 @@
+/* Estilos generales para el formulario de contacto */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para los campos del formulario */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para el botón de envío */
+.contact-form button {
+    background-color: #0073aa;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #005177;
+}
+
+/* Estilos para el checkbox */
+.contact-form .checkbox-group {
+    margin: 10px 0;
+}
+
+/* Estilos para el campo "Otro" */
+.contact-form .other-field {
+    display: none;
+}
+
+/* Estilos para la vista de administración */
+.admin-submissions {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-submissions th,
+.admin-submissions td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.admin-submissions th {
+    background-color: #f1f1f1;
+}

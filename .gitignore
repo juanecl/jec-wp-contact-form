@@ -1,0 +1,41 @@
+# Archivos y carpetas del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración del entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos de dependencias
+/vendor/
+node_modules/
+
+# Archivos de compilación
+/build/
+dist/
+*.log
+
+# Archivos de configuración del IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de configuración de herramientas
+*.lock
+*.cache
+*.bak
+*.swp
+*.swo
+
+# Archivos de traducción generados
+*.mo
+
+# Archivos de respaldo
+*.bak
+*.tmp
+
+# Archivos de configuración de despliegue
+deploy/
+.history/
