@@ -1,0 +1,262 @@
+# Este archivo es la plantilla de traducción para el plugin.
+# Permite la localización del mismo.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en_US\n"
+"Project-Id-Version: Contact Form\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-29 14:06+0000\n"
+"PO-Revision-Date: 2025-01-29 14:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (United States)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.1"
+
+#. Description of the plugin
+msgid ""
+"A contact form plugin with form submission management in the admin area."
+msgstr ""
+
+#: admin/views/submissions.php:36
+msgid "Actions"
+msgstr ""
+
+#: admin/views/email-relay-settings.php:12
+msgid "Brevo"
+msgstr ""
+
+#: admin/views/email-relay-settings.php:20
+msgid "Brevo API Key"
+msgstr ""
+
+#: includes/templates/contact-form.php:30 admin/views/submissions.php:29
+msgid "Company"
+msgstr ""
+
+#. Name of the plugin
+msgid "Contact Form"
+msgstr ""
+
+#: includes/class-admin.php:40 includes/class-admin.php:41
+#: admin/views/submissions.php:14
+msgid "Contact Form Submissions"
+msgstr ""
+
+#: admin/views/submissions.php:33 admin/views/submissions.php:59
+msgid "Copy"
+msgstr ""
+
+#: admin/views/submissions.php:34
+msgid "Created At"
+msgstr ""
+
+#: admin/views/submissions.php:56
+msgid "Delete"
+msgstr ""
+
+#: includes/templates/contact-form.php:52 admin/views/submissions.php:32
+#, fuzzy
+#| msgid "Descripción"
+msgid "Description"
+msgstr "Descripción"
+
+#: admin/views/submissions.php:67
+msgid "Download"
+msgstr ""
+
+#: admin/views/submissions.php:20
+msgid "Download All as CSV"
+msgstr ""
+
+#: admin/views/submissions.php:19
+msgid "Download All as JSON"
+msgstr ""
+
+#: admin/views/submissions.php:37
+msgid "Download Info"
+msgstr ""
+
+#: includes/templates/contact-form.php:25 admin/views/submissions.php:28
+msgid "Email"
+msgstr ""
+
+#: admin/views/email-relay-settings.php:9
+msgid "Email Provider"
+msgstr ""
+
+#: includes/class-admin.php:51 includes/class-admin.php:52
+#: admin/views/email-relay-settings.php:2
+msgid "Email Relay Settings"
+msgstr ""
+
+#: includes/templates/contact-form.php:53
+msgid "Enter a detailed description for your request"
+msgstr ""
+
+#: includes/templates/contact-form.php:31
+msgid "Enter your company name"
+msgstr ""
+
+#: includes/templates/contact-form.php:26
+msgid "Enter your email address"
+msgstr ""
+
+#: includes/templates/contact-form.php:14
+msgid "Enter your first name"
+msgstr ""
+
+#: includes/templates/contact-form.php:19
+msgid "Enter your last name"
+msgstr ""
+
+#: includes/templates/contact-form.php:13 admin/views/submissions.php:26
+msgid "First Name"
+msgstr ""
+
+#: admin/views/submissions.php:62
+msgid "Follow Up"
+msgstr ""
+
+#: admin/views/submissions.php:35
+msgid "Form URL"
+msgstr ""
+
+#: admin/views/email-relay-settings.php:24
+msgid "From Email"
+msgstr ""
+
+#: admin/views/email-relay-settings.php:28
+msgid "From Name"
+msgstr ""
+
+#: admin/views/submissions.php:25
+msgid "ID"
+msgstr ""
+
+#. Author of the plugin
+msgid "Juan E. Chomon Del Campo"
+msgstr ""
+
+#: includes/templates/contact-form.php:18 admin/views/submissions.php:27
+msgid "Last Name"
+msgstr ""
+
+#: admin/views/submissions.php:98
+msgid "Message"
+msgstr ""
+
+#: admin/views/submissions.php:52
+msgid "No"
+msgstr ""
+
+#: admin/views/submissions.php:75
+msgid "No submissions found."
+msgstr ""
+
+#: includes/templates/contact-form.php:43
+msgid "Other"
+msgstr ""
+
+#: admin/views/submissions.php:31
+msgid "Other Reason"
+msgstr ""
+
+#: includes/templates/contact-form.php:54
+msgid "Please enter a description."
+msgstr ""
+
+#: includes/templates/contact-form.php:27
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/templates/contact-form.php:15
+msgid "Please enter your first name."
+msgstr ""
+
+#: includes/templates/contact-form.php:20
+msgid "Please enter your last name."
+msgstr ""
+
+#: includes/templates/contact-form.php:45
+msgid "Please select a reason."
+msgstr ""
+
+#: includes/templates/contact-form.php:41
+msgid "Project Evaluation Consulting"
+msgstr ""
+
+#: includes/templates/contact-form.php:35 admin/views/submissions.php:30
+msgid "Reason"
+msgstr ""
+
+#: includes/templates/contact-form.php:58
+msgid "Receive a copy"
+msgstr ""
+
+#: admin/views/email-relay-settings.php:32
+msgid "Reply-To Email"
+msgstr ""
+
+#: admin/views/email-relay-settings.php:36
+msgid "Reply-To Name"
+msgstr ""
+
+#: admin/views/submissions.php:16
+msgid "Search..."
+msgstr ""
+
+#: includes/templates/contact-form.php:40
+msgid "Security Consulting"
+msgstr ""
+
+#: includes/templates/contact-form.php:37
+msgid "Select a reason"
+msgstr ""
+
+#: includes/templates/contact-form.php:60 admin/views/submissions.php:101
+msgid "Send"
+msgstr ""
+
+#: admin/views/submissions.php:87
+msgid "Send Follow Up Email"
+msgstr ""
+
+#: admin/views/email-relay-settings.php:11
+msgid "SendGrid"
+msgstr ""
+
+#: admin/views/email-relay-settings.php:16
+msgid "SendGrid API Key"
+msgstr ""
+
+#: includes/templates/contact-form.php:38
+msgid "SOS Web"
+msgstr ""
+
+#: includes/templates/contact-form.php:39
+msgid "SOS Wordpress"
+msgstr ""
+
+#: includes/templates/contact-form.php:48
+msgid "Specify"
+msgstr ""
+
+#: includes/templates/contact-form.php:49
+msgid "Specify your reason"
+msgstr ""
+
+#: admin/views/submissions.php:94
+msgid "Subject"
+msgstr ""
+
+#: includes/templates/contact-form.php:42
+msgid "Web Consulting"
+msgstr ""
+
+#: admin/views/submissions.php:52
+msgid "Yes"
+msgstr ""
