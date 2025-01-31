@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div class="mt-5 mx-5 mb-5">
-    <h2 class="mb-3 text-center"><?php _e("Let's talk!"); ?></h2>
+    <h2 class="mb-3 text-center"><?php _e("Let's talk!", 'jec-contact-form'); ?></h2>
     <form id="contact-form" method="post" action="<?php echo admin_url('admin-ajax.php'); ?>" class="needs-validation" novalidate>
         <?php wp_nonce_field('contact_form_nonce', 'nonce_value'); ?>
         <input type="hidden" name="action" value="send_jec_contact_form">

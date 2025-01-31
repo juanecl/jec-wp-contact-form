@@ -1,346 +1,341 @@
-# Este archivo es la plantilla de traducción para el plugin.
-# Permite la localización del mismo.
+#, fuzzy
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Language: en_US\n"
 "Project-Id-Version: jec-contact-form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-29 14:06+0000\n"
-"PO-Revision-Date: 2025-01-31 19:48+0000\n"
-"Last-Translator: \n"
-"Language-Team: English (United States)\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"POT-Creation-Date: 2025-01-31 19:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.7.1; wp-6.7.1"
+"X-Loco-Version: 2.7.1; wp-6.7.1\n"
+"X-Domain: jec-contact-form"
 
 #. Description of the plugin
 msgid ""
 "A contact form plugin with form submission management in the admin area."
 msgstr ""
-"A contact form plugin with form submission management in the admin area."
 
 #: admin/views/submissions.php:36
 msgid "Actions"
-msgstr "Actions"
+msgstr ""
 
 #: admin/views/email-relay-settings.php:12
 msgid "Brevo"
-msgstr "Brevo"
+msgstr ""
 
 #: admin/views/email-relay-settings.php:20
 msgid "Brevo API Key"
-msgstr "Brevo API Key"
+msgstr ""
 
 #: includes/templates/contact-form.php:30 admin/views/submissions.php:29
 msgid "Company"
-msgstr "Company"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:107
 msgid "Company Name"
-msgstr "Company Name"
+msgstr ""
 
 #: includes/class-admin.php:45 includes/class-admin.php:46
 #: admin/views/submissions.php:14
 msgid "Contact Form Submissions"
-msgstr "Contact Form Submissions"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:108
 msgid "Contact Reason"
-msgstr "Contact Reason"
+msgstr ""
 
 #: admin/views/submissions.php:33 admin/views/submissions.php:59
 msgid "Copy"
-msgstr "Copy"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:121
 msgid "Copy of Your Contact Form Submission"
-msgstr "Copy of Your Contact Form Submission"
+msgstr ""
 
 #: admin/views/submissions.php:34
 msgid "Created At"
-msgstr "Created At"
+msgstr ""
 
 #: admin/views/submissions.php:56
 msgid "Delete"
-msgstr "Delete"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:110
 #: includes/templates/contact-form.php:52 admin/views/submissions.php:32
-#| msgid "Descripción"
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 #: admin/views/submissions.php:67
 msgid "Download"
-msgstr "Download"
+msgstr ""
 
 #: admin/views/submissions.php:20
 msgid "Download All as CSV"
-msgstr "Download All as CSV"
+msgstr ""
 
 #: admin/views/submissions.php:19
 msgid "Download All as JSON"
-msgstr "Download All as JSON"
+msgstr ""
 
 #: admin/views/submissions.php:37
 msgid "Download Info"
-msgstr "Download Info"
+msgstr ""
 
 #: includes/templates/contact-form.php:25 admin/views/submissions.php:28
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:106
 msgid "Email Address"
-msgstr "Email Address"
+msgstr ""
 
 #: admin/views/email-relay-settings.php:9
 msgid "Email Provider"
-msgstr "Email Provider"
+msgstr ""
 
 #: includes/class-admin.php:56 includes/class-admin.php:57
 #: admin/views/email-relay-settings.php:2
 msgid "Email Relay Settings"
-msgstr "Email Relay Settings"
+msgstr ""
 
 #: includes/templates/contact-form.php:53
 msgid "Enter a detailed description for your request"
-msgstr "Enter a detailed description for your request"
+msgstr ""
 
 #: includes/templates/contact-form.php:31
 msgid "Enter your company name"
-msgstr "Enter your company name"
+msgstr ""
 
 #: includes/templates/contact-form.php:26
 msgid "Enter your email address"
-msgstr "Enter your email address"
+msgstr ""
 
 #: includes/templates/contact-form.php:14
 msgid "Enter your first name"
-msgstr "Enter your first name"
+msgstr ""
 
 #: includes/templates/contact-form.php:19
 msgid "Enter your last name"
-msgstr "Enter your last name"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:79
 msgid "Error in Contact_Form_Handler: "
-msgstr "Error in Contact_Form_Handler: "
+msgstr ""
 
 #: includes/class-contact-form-handler.php:69
 msgid "Failed to save data to the database."
-msgstr "Failed to save data to the database."
+msgstr ""
 
 #: includes/class-email-factory.php:102
 msgid "Failed to send email with Brevo: "
-msgstr "Failed to send email with Brevo: "
+msgstr ""
 
 #: includes/class-email-factory.php:68
 msgid "Failed to send email with SendGrid: "
-msgstr "Failed to send email with SendGrid: "
+msgstr ""
 
 #: includes/class-contact-form-handler.php:104
 #: includes/templates/contact-form.php:13 admin/views/submissions.php:26
 msgid "First Name"
-msgstr "First Name"
+msgstr ""
 
 #: admin/views/submissions.php:62
 msgid "Follow Up"
-msgstr "Follow Up"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:76
 msgid "Form submitted successfully!"
-msgstr "Form submitted successfully!"
+msgstr ""
 
 #: admin/views/submissions.php:35
 msgid "Form URL"
-msgstr "Form URL"
+msgstr ""
 
 #: admin/views/email-relay-settings.php:24
 msgid "From Email"
-msgstr "From Email"
+msgstr ""
 
 #: admin/views/email-relay-settings.php:28
 msgid "From Name"
-msgstr "From Name"
+msgstr ""
 
 #: admin/views/submissions.php:25
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:34
 msgid "Invalid email address."
-msgstr "Invalid email address."
+msgstr ""
 
 #: includes/class-email-factory.php:38
 msgid "Invalid email provider specified."
-msgstr "Invalid email provider specified."
+msgstr ""
 
 #. Name of the plugin
 msgid "jec-contact-form"
-msgstr "JEC Contact Form"
+msgstr ""
 
 #. Author of the plugin
 msgid "Juan E. Chomon Del Campo"
-msgstr "Juan E. Chomon Del Campo"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:105
 #: includes/templates/contact-form.php:18 admin/views/submissions.php:27
 msgid "Last Name"
-msgstr "Last Name"
+msgstr ""
 
 #: includes/templates/contact-form.php:7
 msgid "Let's talk!"
-msgstr "Let's talk!"
+msgstr ""
 
 #: admin/views/submissions.php:98
 msgid "Message"
-msgstr "Message"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:114
 msgid "New Contact Form Submission"
-msgstr "New Contact Form Submission"
+msgstr ""
 
 #: admin/views/submissions.php:52
 msgid "No"
-msgstr "No"
+msgstr ""
 
 #: admin/views/submissions.php:75
 msgid "No submissions found."
-msgstr "No submissions found."
+msgstr ""
 
 #: includes/class-contact-form-handler.php:19
 msgid "Nonce verification failed."
-msgstr "Nonce verification failed."
+msgstr ""
 
 #: includes/templates/contact-form.php:43
 msgid "Other"
 msgstr ""
-"Other\n"
 
 #: includes/class-contact-form-handler.php:109 admin/views/submissions.php:31
 msgid "Other Reason"
-msgstr "Other Reason"
+msgstr ""
 
 #: includes/templates/contact-form.php:54
 msgid "Please enter a description."
-msgstr "Please enter a description."
+msgstr ""
 
 #: includes/templates/contact-form.php:27
 msgid "Please enter a valid email address."
-msgstr "Please enter a valid email address."
+msgstr ""
 
 #: includes/templates/contact-form.php:15
 msgid "Please enter your first name."
-msgstr "Please enter your first name."
+msgstr ""
 
 #: includes/templates/contact-form.php:20
 msgid "Please enter your last name."
-msgstr "Please enter your last name."
+msgstr ""
 
 #: includes/class-contact-form-handler.php:26
 msgid "Please fill in all required fields."
-msgstr "Please fill in all required fields."
+msgstr ""
 
 #: includes/templates/contact-form.php:45
 msgid "Please select a reason."
-msgstr "Please select a reason."
+msgstr ""
 
 #: includes/templates/contact-form.php:41
 msgid "Project Evaluation Consulting"
-msgstr "Project Evaluation Consulting"
+msgstr ""
 
 #: includes/templates/contact-form.php:35 admin/views/submissions.php:30
 msgid "Reason"
-msgstr "Reason"
+msgstr ""
 
 #: includes/class-admin.php:111
 msgid "reCAPTCHA Secret Key"
-msgstr "reCAPTCHA Secret Key"
+msgstr ""
 
 #: includes/class-admin.php:104
 msgid "reCAPTCHA Site Key"
-msgstr "reCAPTCHA Site Key"
+msgstr ""
 
 #: includes/templates/contact-form.php:58
 msgid "Receive a copy"
-msgstr "Receive a copy"
+msgstr ""
 
 #: admin/views/email-relay-settings.php:32
 msgid "Reply-To Email"
-msgstr "Reply-To Email"
+msgstr ""
 
 #: admin/views/email-relay-settings.php:36
 msgid "Reply-To Name"
-msgstr "Reply-To Name"
+msgstr ""
 
 #: admin/views/submissions.php:16
 msgid "Search..."
-msgstr "Search..."
+msgstr ""
 
 #: includes/templates/contact-form.php:40
 msgid "Security Consulting"
-msgstr "Security Consulting"
+msgstr ""
 
 #: includes/templates/contact-form.php:37
 msgid "Select a reason"
-msgstr "Select a reason"
+msgstr ""
 
 #: includes/templates/contact-form.php:60 admin/views/submissions.php:101
 msgid "Send"
-msgstr "Send"
+msgstr ""
 
 #: admin/views/submissions.php:87
 msgid "Send Follow Up Email"
-msgstr "Send Follow Up Email"
+msgstr ""
 
 #: admin/views/email-relay-settings.php:11
 msgid "SendGrid"
-msgstr "SendGrid"
+msgstr ""
 
 #: admin/views/email-relay-settings.php:16
 msgid "SendGrid API Key"
-msgstr "SendGrid API Key"
+msgstr ""
 
 #: includes/templates/contact-form.php:38
 msgid "SOS Web"
-msgstr "SOS Web"
+msgstr ""
 
 #: includes/templates/contact-form.php:39
 msgid "SOS Wordpress"
-msgstr "SOS Wordpress"
+msgstr ""
 
 #: includes/templates/contact-form.php:48
 msgid "Specify"
-msgstr "Specify"
+msgstr ""
 
 #: includes/templates/contact-form.php:49
 msgid "Specify your reason"
-msgstr "Specify your reason"
+msgstr ""
 
 #: admin/views/submissions.php:94
 msgid "Subject"
-msgstr "Subject"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:117
 msgid ""
 "Thank you for your submission. We have received your message and will get "
 "back to you shortly."
 msgstr ""
-"Thank you for your submission. We have received your message and will get "
-"back to you shortly."
 
 #: includes/templates/contact-form.php:42
 msgid "Web Consulting"
-msgstr "Web Consulting"
+msgstr ""
 
 #: admin/views/submissions.php:52
 msgid "Yes"
-msgstr "Yes"
+msgstr ""
 
 #: includes/class-contact-form-handler.php:117
 msgid "Your Contact Form Submission"
-msgstr "Your Contact Form Submission"
+msgstr ""

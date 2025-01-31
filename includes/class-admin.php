@@ -1,4 +1,9 @@
 <?php
+/**
+ * Class ContactFormAdmin
+ *
+ * This class handles the administration of the contact form plugin, including menu items, settings, and scripts.
+ */
 class ContactFormAdmin {
     /**
      * The single instance of the class.
@@ -10,7 +15,7 @@ class ContactFormAdmin {
     /**
      * Constructor method.
      * 
-     * Initializes the class by adding the admin menu action.
+     * Initializes the class by adding the admin menu, registering settings, and enqueuing scripts.
      */
     private function __construct() {
         add_action('admin_menu', array($this, 'add_admin_menu'));
@@ -77,9 +82,10 @@ class ContactFormAdmin {
     /**
      * Register Settings.
      * 
-     * Registers the settings for the email relay configuration.
+     * Registers the settings for the email relay configuration and reCAPTCHA keys.
      */
     public function register_settings() {
+        // Register email relay settings
         register_setting('email_relay_settings', 'email_provider');
         register_setting('email_relay_settings', 'sendgrid_api_key');
         register_setting('email_relay_settings', 'brevo_api_key');
@@ -87,6 +93,45 @@ class ContactFormAdmin {
         register_setting('email_relay_settings', 'from_name');
         register_setting('email_relay_settings', 'reply_to_email');
         register_setting('email_relay_settings', 'reply_to_name');
+
+        // Register reCAPTCHA settings
+        register_setting('general', 'recaptcha_site_key');
+        register_setting('general', 'recaptcha_secret_key');
+
+        // Add settings fields for reCAPTCHA
+        add_settings_field(
+            'recaptcha_site_key',
+            __('reCAPTCHA Site Key', 'jec-contact-form'),
+            array($this, 'recaptcha_site_key_callback'),
+            'general'
+        );
+
+        add_settings_field(
+            'recaptcha_secret_key',
+            __('reCAPTCHA Secret Key', 'jec-contact-form'),
+            array($this, 'recaptcha_secret_key_callback'),
+            'general'
+        );
+    }
+
+    /**
+     * Callback for reCAPTCHA Site Key field.
+     * 
+     * Displays the input field for the reCAPTCHA Site Key.
+     */
+    public function recaptcha_site_key_callback() {
+        $value = get_option('recaptcha_site_key', '');
+        echo '<input type="text" id="recaptcha_site_key" name="recaptcha_site_key" value="' . esc_attr($value) . '" />';
+    }
+
+    /**
+     * Callback for reCAPTCHA Secret Key field.
+     * 
+     * Displays the input field for the reCAPTCHA Secret Key.
+     */
+    public function recaptcha_secret_key_callback() {
+        $value = get_option('recaptcha_secret_key', '');
+        echo '<input type="text" id="recaptcha_secret_key" name="recaptcha_secret_key" value="' . esc_attr($value) . '" />';
     }
 
     /**

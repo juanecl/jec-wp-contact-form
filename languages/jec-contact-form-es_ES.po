@@ -4,10 +4,10 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: es_ES\n"
-"Project-Id-Version: Contact Form\n"
+"Project-Id-Version: jec-contact-form\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-29 14:06+0000\n"
-"PO-Revision-Date: 2025-01-29 14:15+0000\n"
+"PO-Revision-Date: 2025-01-31 19:48+0000\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -39,18 +39,27 @@ msgstr "Clave API de Brevo"
 msgid "Company"
 msgstr "Compañía"
 
-#. Name of the plugin
-msgid "Contact Form"
-msgstr "Formulario de contacto"
+#: includes/class-contact-form-handler.php:107
+msgid "Company Name"
+msgstr ""
+"Nombre de la compañía\n"
 
-#: includes/class-admin.php:40 includes/class-admin.php:41
+#: includes/class-admin.php:45 includes/class-admin.php:46
 #: admin/views/submissions.php:14
 msgid "Contact Form Submissions"
 msgstr "Envíos de formularios de contacto"
 
+#: includes/class-contact-form-handler.php:108
+msgid "Contact Reason"
+msgstr "Razón del contacto"
+
 #: admin/views/submissions.php:33 admin/views/submissions.php:59
 msgid "Copy"
 msgstr "Copiar"
+
+#: includes/class-contact-form-handler.php:121
+msgid "Copy of Your Contact Form Submission"
+msgstr "Copia del envío del formulario de contacto"
 
 #: admin/views/submissions.php:34
 msgid "Created At"
@@ -60,8 +69,8 @@ msgstr "Creado en"
 msgid "Delete"
 msgstr "Borrar"
 
+#: includes/class-contact-form-handler.php:110
 #: includes/templates/contact-form.php:52 admin/views/submissions.php:32
-#, fuzzy
 #| msgid "Descripción"
 msgid "Description"
 msgstr "Descripción"
@@ -86,11 +95,15 @@ msgstr "Descargar información"
 msgid "Email"
 msgstr "Correo electrónico"
 
+#: includes/class-contact-form-handler.php:106
+msgid "Email Address"
+msgstr "Dirección de correo electrónico"
+
 #: admin/views/email-relay-settings.php:9
 msgid "Email Provider"
 msgstr "Proveedor de correo electrónico"
 
-#: includes/class-admin.php:51 includes/class-admin.php:52
+#: includes/class-admin.php:56 includes/class-admin.php:57
 #: admin/views/email-relay-settings.php:2
 msgid "Email Relay Settings"
 msgstr "Configuración de retransmisión de correo electrónico"
@@ -115,6 +128,23 @@ msgstr "Ingresa tu nombre"
 msgid "Enter your last name"
 msgstr "Ingresa tu apellido"
 
+#: includes/class-contact-form-handler.php:79
+msgid "Error in Contact_Form_Handler: "
+msgstr "Error en el manejador del formulario de contacto:"
+
+#: includes/class-contact-form-handler.php:69
+msgid "Failed to save data to the database."
+msgstr "No ha sido posible guardar en base de datos."
+
+#: includes/class-email-factory.php:102
+msgid "Failed to send email with Brevo: "
+msgstr "No ha sido posible enviar el correo electrónico con Brevo:"
+
+#: includes/class-email-factory.php:68
+msgid "Failed to send email with SendGrid: "
+msgstr "No ha sido posible enviar el correo electrónico con Sendgrid:"
+
+#: includes/class-contact-form-handler.php:104
 #: includes/templates/contact-form.php:13 admin/views/submissions.php:26
 msgid "First Name"
 msgstr "Nombre de pila"
@@ -122,6 +152,10 @@ msgstr "Nombre de pila"
 #: admin/views/submissions.php:62
 msgid "Follow Up"
 msgstr "Hacer un seguimiento"
+
+#: includes/class-contact-form-handler.php:76
+msgid "Form submitted successfully!"
+msgstr "La solicitud ha sido enviada!"
 
 #: admin/views/submissions.php:35
 msgid "Form URL"
@@ -139,17 +173,38 @@ msgstr "De Nombre"
 msgid "ID"
 msgstr "ID"
 
+#: includes/class-contact-form-handler.php:34
+msgid "Invalid email address."
+msgstr "El correo electrónico no es válido"
+
+#: includes/class-email-factory.php:38
+msgid "Invalid email provider specified."
+msgstr "El proveedor de correo electrónico no es válido"
+
+#. Name of the plugin
+msgid "jec-contact-form"
+msgstr "JEC Contact Form"
+
 #. Author of the plugin
 msgid "Juan E. Chomon Del Campo"
 msgstr "Juan E. Chomon Del Campo"
 
+#: includes/class-contact-form-handler.php:105
 #: includes/templates/contact-form.php:18 admin/views/submissions.php:27
 msgid "Last Name"
 msgstr "Apellido"
 
+#: includes/templates/contact-form.php:7
+msgid "Let's talk!"
+msgstr "¡Hablémos!"
+
 #: admin/views/submissions.php:98
 msgid "Message"
 msgstr "Mensaje"
+
+#: includes/class-contact-form-handler.php:114
+msgid "New Contact Form Submission"
+msgstr "Nueva solicitud del formulario de contacto"
 
 #: admin/views/submissions.php:52
 msgid "No"
@@ -159,11 +214,15 @@ msgstr "No"
 msgid "No submissions found."
 msgstr "No se encontraron envíos."
 
+#: includes/class-contact-form-handler.php:19
+msgid "Nonce verification failed."
+msgstr "La verificación nonce ha fallado."
+
 #: includes/templates/contact-form.php:43
 msgid "Other"
 msgstr "Otro"
 
-#: admin/views/submissions.php:31
+#: includes/class-contact-form-handler.php:109 admin/views/submissions.php:31
 msgid "Other Reason"
 msgstr "Otra razón"
 
@@ -183,6 +242,10 @@ msgstr "Por favor, introduzca su nombre."
 msgid "Please enter your last name."
 msgstr "Por favor, introduzca su apellido."
 
+#: includes/class-contact-form-handler.php:26
+msgid "Please fill in all required fields."
+msgstr "Por favor completa todos los campos requeridos."
+
 #: includes/templates/contact-form.php:45
 msgid "Please select a reason."
 msgstr "Por favor seleccione un motivo."
@@ -194,6 +257,14 @@ msgstr "Consultoría de evaluación de proyectos"
 #: includes/templates/contact-form.php:35 admin/views/submissions.php:30
 msgid "Reason"
 msgstr "Razón"
+
+#: includes/class-admin.php:111
+msgid "reCAPTCHA Secret Key"
+msgstr "reCAPTCHA Secret Key"
+
+#: includes/class-admin.php:104
+msgid "reCAPTCHA Site Key"
+msgstr "reCAPTCHA Site Key"
 
 #: includes/templates/contact-form.php:58
 msgid "Receive a copy"
@@ -255,6 +326,14 @@ msgstr "Especifique su motivo"
 msgid "Subject"
 msgstr "Sujeto"
 
+#: includes/class-contact-form-handler.php:117
+msgid ""
+"Thank you for your submission. We have received your message and will get "
+"back to you shortly."
+msgstr ""
+"Gracias por tu envío. Hemos recibido su mensaje y nos comunicaremos con "
+"usted en breve."
+
 #: includes/templates/contact-form.php:42
 msgid "Web Consulting"
 msgstr "Consultoría Web"
@@ -262,3 +341,7 @@ msgstr "Consultoría Web"
 #: admin/views/submissions.php:52
 msgid "Yes"
 msgstr "Sí"
+
+#: includes/class-contact-form-handler.php:117
+msgid "Your Contact Form Submission"
+msgstr "Su envío de formulario de contacto"

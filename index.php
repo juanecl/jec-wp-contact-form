@@ -1,9 +1,11 @@
 <?php
 /**
- * Plugin Name: Contact Form
+ * Plugin Name: jec-contact-form
  * Description: A contact form plugin with form submission management in the admin area.
  * Version: 1.0
  * Author: Juan E. Chomon Del Campo
+ * Text Domain: jec-contact-form
+ * Domain Path: /languages
  */
 
 // Prevent direct access to the file
@@ -24,18 +26,52 @@ require_once MPC_PLUGIN_DIR . 'includes/class-contact-form-handler.php'; // Clas
 require_once MPC_PLUGIN_DIR . 'includes/class-contact-form-activator.php'; // Class for plugin activation
 
 /**
- * Function to activate the plugin.
- * This function runs when the plugin is activated and is responsible for creating the necessary tables in the database.
+ * Main plugin class.
  */
-register_activation_hook( __FILE__, ['Contact_Form_Activator', 'activate'] );
+class JEC_Contact_Form {
+    /**
+     * The single instance of the class.
+     *
+     * @var JEC_Contact_Form
+     */
+    private static $instance = null;
 
-/**
- * Function to initialize the plugin.
- * This function runs on the 'init' hook of WordPress and is responsible for initializing the contact form.
- */
-function mpc_init() {
-    // Initialize the contact form
-    new Contact_Form();
+    /**
+     * Constructor method.
+     * 
+     * Initializes the plugin by setting up hooks and loading text domain.
+     */
+    private function __construct() {
+        // Load plugin text domain for translations
+        add_action('plugins_loaded', array($this, 'load_textdomain'));
+
+        // Initialize the contact form
+        add_action('init', array('Contact_Form', 'get_instance'));
+
+        // Register activation hook
+        register_activation_hook(__FILE__, array('Contact_Form_Activator', 'activate'));
+    }
+
+    /**
+     * Get the single instance of the class.
+     *
+     * @return JEC_Contact_Form
+     */
+    public static function get_instance() {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    /**
+     * Load plugin text domain for translations.
+     */
+    public function load_textdomain() {
+        load_plugin_textdomain('jec-contact-form', false, dirname(plugin_basename(__FILE__)) . '/languages');
+    }
 }
-add_action( 'init', 'mpc_init' );
+
+// Initialize the singleton instance
+JEC_Contact_Form::get_instance();
 ?>

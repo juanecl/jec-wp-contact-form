@@ -31,7 +31,7 @@ class Contact_Form_Renderer {
      */
     public static function render($id = 'contact-form') {
         // Enqueue the JavaScript file for form validation and dynamic fields
-        wp_enqueue_script('jec-contact-form-js', plugin_dir_url(__FILE__) . '../assets/js/contact-form.js', array('jquery'), null, true);
+        wp_enqueue_script('jec-contact-form-js', MPC_PLUGIN_URL . 'assets/js/contact-form.js', array('jquery'), null, true);
 
         // Start output buffering
         ob_start();

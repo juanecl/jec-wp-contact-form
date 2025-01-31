@@ -6,15 +6,34 @@
  */
 class Contact_Form {
     /**
+     * The single instance of the class.
+     *
+     * @var Contact_Form
+     */
+    private static $instance = null;
+
+    /**
      * Constructor.
      *
      * This method initializes the class by registering the shortcode and AJAX actions.
      */
-    public function __construct() {
+    private function __construct() {
         add_shortcode('jec-contact-form', [$this, 'render_form']);
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
         add_action('wp_ajax_send_jec_contact_form', [$this, 'handle_form_submission']);
         add_action('wp_ajax_nopriv_send_jec_contact_form', [$this, 'handle_form_submission']);
+    }
+
+    /**
+     * Get the single instance of the class.
+     *
+     * @return Contact_Form
+     */
+    public static function get_instance() {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
     }
 
     /**

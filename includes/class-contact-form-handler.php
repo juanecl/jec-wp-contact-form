@@ -16,14 +16,14 @@ class Contact_Form_Handler {
         try {
             // Verify nonce for security
             if (!check_ajax_referer('contact_form_nonce', 'nonce_value', false)) {
-                throw new Exception('Nonce verification failed.');
+                throw new Exception(__('Nonce verification failed.', 'jec-contact-form'));
             }
 
             // Validate and process form data
             $required_fields = ['first_name', 'last_name', 'email_address', 'description_text'];
             foreach ($required_fields as $field) {
                 if (empty($_POST[$field])) {
-                    throw new Exception('Please fill in all required fields.');
+                    throw new Exception(__('Please fill in all required fields.', 'jec-contact-form'));
                 }
             }
 
@@ -31,7 +31,7 @@ class Contact_Form_Handler {
             $last_name = sanitize_text_field($_POST['last_name']);
             $email_address = sanitize_email($_POST['email_address']);
             if (!is_email($email_address)) {
-                throw new Exception('Invalid email address.');
+                throw new Exception(__('Invalid email address.', 'jec-contact-form'));
             }
             $company_name = sanitize_text_field($_POST['company_name']);
             $contact_reason = sanitize_text_field($_POST['contact_reason']);
@@ -66,17 +66,17 @@ class Contact_Form_Handler {
             ]);
 
             if ($result === false) {
-                throw new Exception('Failed to save data to the database.');
+                throw new Exception(__('Failed to save data to the database.', 'jec-contact-form'));
             }
 
             // Send emails
             self::send_emails($first_name, $last_name, $email_address, $company_name, $contact_reason, $other_reason, $description_text, $receive_copy);
 
             // Send JSON success response
-            wp_send_json_success(['message' => 'Form submitted successfully!']);
+            wp_send_json_success(['message' => __('Form submitted successfully!', 'jec-contact-form')]);
         } catch (Exception $e) {
             // Log the error
-            error_log('Error in Contact_Form_Handler: ' . $e->getMessage());
+            error_log(__('Error in Contact_Form_Handler: ', 'jec-contact-form') . $e->getMessage());
             // Send JSON error response
             wp_send_json_error(['message' => $e->getMessage()]);
         }
@@ -101,24 +101,24 @@ class Contact_Form_Handler {
 
         // Email content
         $email_content = "
-            First Name: $first_name\n
-            Last Name: $last_name\n
-            Email Address: $email_address\n
-            Company Name: $company_name\n
-            Contact Reason: $contact_reason\n
-            Other Reason: $other_reason\n
-            Description: $description_text\n
+            " . __('First Name', 'jec-contact-form') . ": $first_name\n
+            " . __('Last Name', 'jec-contact-form') . ": $last_name\n
+            " . __('Email Address', 'jec-contact-form') . ": $email_address\n
+            " . __('Company Name', 'jec-contact-form') . ": $company_name\n
+            " . __('Contact Reason', 'jec-contact-form') . ": $contact_reason\n
+            " . __('Other Reason', 'jec-contact-form') . ": $other_reason\n
+            " . __('Description', 'jec-contact-form') . ": $description_text\n
         ";
 
         // Send email to admin
-        EmailFactory::send_email($provider, $from_email, $from_name, $from_email, 'New Contact Form Submission', $email_content);
-        
+        EmailFactory::send_email($provider, $from_email, $from_name, 'hola@juane.cl', __('New Contact Form Submission', 'jec-contact-form'), $email_content);
+
         // Send confirmation email to user
-        EmailFactory::send_email($provider, $from_email, $from_name, $email_address, 'Your Contact Form Submission', 'Thank you for your submission. We have received your message and will get back to you shortly.');
+        EmailFactory::send_email($provider, $from_email, $from_name, $email_address, __('Your Contact Form Submission', 'jec-contact-form'), __('Thank you for your submission. We have received your message and will get back to you shortly.', 'jec-contact-form'));
 
         // Send copy of submission to user if requested
         if ($receive_copy) {
-            EmailFactory::send_email($provider, $from_email, $from_name, $email_address, 'Copy of Your Contact Form Submission', $email_content);
+            EmailFactory::send_email($provider, $from_email, $from_name, $email_address, __('Copy of Your Contact Form Submission', 'jec-contact-form'), $email_content);
         }
     }
 }
