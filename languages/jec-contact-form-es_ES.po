@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: jec-contact-form\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-29 14:06+0000\n"
-"PO-Revision-Date: 2025-01-31 19:48+0000\n"
+"PO-Revision-Date: 2025-01-31 20:00+0000\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -196,7 +196,7 @@ msgstr "Apellido"
 
 #: includes/templates/contact-form.php:7
 msgid "Let's talk!"
-msgstr "¡Hablémos!"
+msgstr "¡Hablemos!"
 
 #: admin/views/submissions.php:98
 msgid "Message"
