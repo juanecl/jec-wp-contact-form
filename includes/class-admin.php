@@ -142,6 +142,10 @@ class ContactFormAdmin {
     public function enqueue_admin_scripts($hook) {
         if ($hook === 'toplevel_page_jec-contact-form' || $hook === 'contact-form-submissions_page_email-relay-settings') {
             wp_enqueue_style('bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+            wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), null, true);
+            wp_enqueue_style('bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css');
+            wp_enqueue_script('jec-contact-form-submissions', plugin_dir_url(__FILE__) . '../admin/js/submissions.js', array('jquery', 'bootstrap-js'), null, true);
+            wp_enqueue_style('jec-contact-form-submissions', plugin_dir_url(__FILE__) . '../admin/css/submissions.css');
             wp_enqueue_style('email-relay-settings-css', plugin_dir_url(__FILE__) . '../admin/css/email-relay-settings.css');
             wp_enqueue_script('email-relay-settings-js', plugin_dir_url(__FILE__) . '../admin/js/email-relay-settings.js', array('jquery'), false, true);
         }

@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 ?>
-<div class="mt-5 mx-5 mb-5">
+<div class="mx-5 section-padding">
     <h2 class="mb-3 text-left"><?php _e("Let's talk!", 'jec-contact-form'); ?></h2>
     <form id="contact-form" method="post" action="<?php echo admin_url('admin-ajax.php'); ?>" class="needs-validation" novalidate>
         <?php wp_nonce_field('contact_form_nonce', 'nonce_value'); ?>

@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = this.getAttribute('data-email');
             const name = this.getAttribute('data-name');
             document.getElementById('follow-up-email').value = email;
+            document.getElementById('follow-up-subject').value = `Follow Up: ${name}`;
+            document.getElementById('follow-up-message').value = '';
             const followUpModal = new bootstrap.Modal(document.getElementById('follow-up-modal'));
             followUpModal.show();
         });
@@ -39,8 +41,31 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('follow-up-email').value;
         const subject = document.getElementById('follow-up-subject').value;
         const message = document.getElementById('follow-up-message').value;
-        // Perform AJAX request to send the follow up email
-        // ...
+
+        jQuery.ajax({
+            url: jecContactFormData.ajax_url,
+            method: 'POST',
+            data: {
+                action: 'send_follow_up_email',
+                security: jecContactFormData.security,
+                email: email,
+                subject: subject,
+                message: message
+            },
+            success: function(response) {
+                if (response.success) {
+                    alert(response.data);
+                    const followUpModal = bootstrap.Modal.getInstance(document.getElementById('follow-up-modal'));
+                    followUpModal.hide();
+                } else {
+                    alert(response.data);
+                }
+            },
+            error: function(e) {
+                console.error(e);
+                alert('An error occurred while sending the email.');
+            }
+        });
     });
 
     // Handle download info

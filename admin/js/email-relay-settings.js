@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    emailProviderSelect.addEventListener('change', toggleSettings);
-
-    // Inicializar la visibilidad de los campos al cargar la página
-    toggleSettings();
+    if (emailProviderSelect) {
+        emailProviderSelect.addEventListener('change', toggleSettings);
+        toggleSettings();
+    }
 });

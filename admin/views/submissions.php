@@ -107,14 +107,11 @@ $submissions = Contact_Form_Submissions::get_submissions();
 
 <!-- Incluir los scripts y estilos -->
 <?php
-wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), null, true);
-wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
-wp_enqueue_style('bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css');
-wp_enqueue_script('jec-contact-form-submissions', plugin_dir_url(__FILE__) . '../js/submissions.js', array('jquery', 'bootstrap-js'), null, true);
-wp_enqueue_style('jec-contact-form-submissions', plugin_dir_url(__FILE__) . '../css/submissions.css');
 
 // Pasar datos de PHP a JavaScript
 wp_localize_script('jec-contact-form-submissions', 'jecContactFormData', array(
+    'ajax_url' => admin_url('admin-ajax.php'),
+    'security' => wp_create_nonce('send_follow_up_email_nonce'),
     'submissions' => $submissions
 ));
 ?>
