@@ -63,4 +63,10 @@
 .section-padding {
     padding-top: 6rem!important;
     padding-bottom: 9rem!important;
-  }
+}
+
+.container-contact-form h2,
+.container-contact-form form {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
