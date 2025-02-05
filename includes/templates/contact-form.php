@@ -3,7 +3,26 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 ?>
-<div class="mx-5 section-padding">
+<style>
+    .container-contact-form {
+        display: block;
+        position: relative;
+    }
+    .container-contact-form::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(https://www.juane.cl/wp-content/uploads/2025/02/bg-3-scaled.jpg);
+        background-size: cover;
+        background-position: center;
+        opacity: .15; /* Ajusta la opacidad aquí */
+        z-index: -1;
+    }
+</style>
+<div class="container-contact-form container-fluid section-padding">
     <h2 class="mb-3 text-left"><?php _e("Let's talk!", 'jec-contact-form'); ?></h2>
     <form id="contact-form" method="post" action="<?php echo admin_url('admin-ajax.php'); ?>" class="needs-validation" novalidate>
         <?php wp_nonce_field('contact_form_nonce', 'nonce_value'); ?>

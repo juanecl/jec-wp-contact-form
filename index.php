@@ -1,12 +1,15 @@
 <?php
-/**
- * Plugin Name: jec-contact-form
- * Description: A contact form plugin with form submission management in the admin area.
- * Version: 1.0
- * Author: Juan E. Chomon Del Campo
- * Text Domain: jec-contact-form
- * Domain Path: /languages
- */
+/*
+Plugin Name: jec-contact-form
+Plugin URI: https://github.com/juanecl/jec-wp-contact-form
+Description: A contact form plugin with form submission management in the admin area.
+Version: 1.0
+Author: Juan Enrique Chomon Del Campo
+Author URI: https://www.juane.cl
+License: GPL2
+Text Domain: jec-contact-form
+Domain Path: /languages
+*/
 
 // Prevent direct access to the file
 if ( ! defined( 'ABSPATH' ) ) {
