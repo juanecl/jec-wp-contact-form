@@ -5,6 +5,7 @@
  * This class handles the processing of contact form submissions.
  */
 require_once 'class-email-factory.php';
+require_once 'class-recaptcha.php';
 
 class Contact_Form_Handler {
     /**
@@ -20,7 +21,7 @@ class Contact_Form_Handler {
             }
 
             // Validate and process form data
-            $required_fields = ['first_name', 'last_name', 'email_address', 'description_text'];
+            $required_fields = ['first_name', 'last_name', 'email_address', 'description_text', 'recaptcha_response'];
             foreach ($required_fields as $field) {
                 if (empty($_POST[$field])) {
                     throw new Exception(__('Please fill in all required fields.', 'jec-contact-form'));
@@ -42,9 +43,27 @@ class Contact_Form_Handler {
             $user_ip = sanitize_text_field($_SERVER['REMOTE_ADDR']);
             $browser_info = sanitize_text_field($_SERVER['HTTP_USER_AGENT']);
             $form_url = sanitize_text_field($_SERVER['HTTP_REFERER']);
+            $recaptcha_response = sanitize_text_field($_POST['recaptcha_response']);
 
-            // Log sanitized data
+            // Verify reCAPTCHA
+            $recaptcha = new ReCaptcha();
+            if (!$recaptcha->verify($recaptcha_response)) {
+                error_log(__('reCAPTCHA verification failed.', 'jec-contact-form'));
+                error_log(__('Token: ', 'jec-contact-form') . $recaptcha_response);
+                error_log(__('IP: ', 'jec-contact-form') . $user_ip);
+                error_log(__('User Agent: ', 'jec-contact-form') . $browser_info);
+                error_log(__('Form URL: ', 'jec-contact-form') . $form_url);
+                error_log(__('Email Address: ', 'jec-contact-form') . $email_address);
+                error_log(__('First Name: ', 'jec-contact-form') . $first_name);
+                error_log(__('Last Name: ', 'jec-contact-form') . $last_name);
+                error_log(__('Company Name: ', 'jec-contact-form') . $company_name);
+                error_log(__('Contact Reason: ', 'jec-contact-form') . $contact_reason);
+                error_log(__('Other Reason: ', 'jec-contact-form') . $other_reason);
+                error_log(__('Description: ', 'jec-contact-form') . $description_text);
+                error_log(__('Receive Copy: ', 'jec-contact-form') . $receive_copy);
 
+                wp_send_json_error(__('reCAPTCHA verification failed. Please try again.', 'jec-contact-form'));
+            } 
 
             // Insert data into the database
             global $wpdb;
@@ -66,7 +85,7 @@ class Contact_Form_Handler {
             ]);
 
             if ($result === false) {
-                throw new Exception(__('Failed to save data to the database.', 'jec-contact-form'));
+                wp_send_json_error(__('Failed to save data to the database.', 'jec-contact-form'));
             }
 
             // Send emails

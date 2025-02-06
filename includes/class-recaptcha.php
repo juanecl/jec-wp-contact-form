@@ -49,12 +49,13 @@ class ReCaptcha {
     /**
      * Verify reCAPTCHA.
      * 
-     * Verifies the reCAPTCHA token with Google's reCAPTCHA API.
+     * Verifies the reCAPTCHA token with Google's reCAPTCHA API and evaluates the score.
      *
      * @param string $token The reCAPTCHA token to verify.
-     * @return bool True if the token is valid, false otherwise.
+     * @param float $threshold The minimum score required to pass the verification.
+     * @return bool True if the token is valid and the score is above the threshold, false otherwise.
      */
-    public function verify($token) {
+    public function verify($token, $threshold = 0.5) {
         $response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
             'body' => [
                 'secret' => $this->secret_key,
@@ -64,8 +65,14 @@ class ReCaptcha {
 
         $response_body = wp_remote_retrieve_body($response);
         $result = json_decode($response_body);
+        error_log('Recaptcha response: ' . print_r($result, true));
 
-        return $result->success;
+        if ($result->success && $result->score >= $threshold) {
+            return true;
+        }
+
+        return false;
     }
+    
 }
 ?>
