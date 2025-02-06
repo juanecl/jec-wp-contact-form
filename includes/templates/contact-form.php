@@ -58,6 +58,16 @@ if ( ! defined( 'ABSPATH' ) ) {
             <input type="checkbox" class="form-check-input" id="receive_copy" name="receive_copy">
             <label class="form-check-label" for="receive_copy"><?php _e('Receive a copy', 'jec-contact-form'); ?></label>
         </div>
+        <input type="hidden" id="recaptcha-response" name="recaptcha_response">
         <button type="submit" class="btn btn-primary"><?php _e('Send', 'jec-contact-form'); ?></button>
     </form>
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo esc_attr(get_option('recaptcha_site_key')); ?>"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('<?php echo esc_attr(get_option('recaptcha_site_key')); ?>', {action: 'submit'}).then(function(token) {
+            document.getElementById('recaptcha-response').value = token;
+        });
+    });
+</script>
